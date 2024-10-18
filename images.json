@@ -32,6 +32,10 @@
    "ANTONBLAST":{
       "icon":"https://i.imgur.com/n6hFXXS.png"
    },
+   "Baldi's Basics in Education and Learning":{
+      "icon":"https://i.imgur.com/JMEArml.png",
+      "short_name": "Baldi's Basics"
+   },
    "Banjo-Kazooie":{
       "icon":"https://i.imgur.com/wzmwdJg.png"
    },
@@ -43,6 +47,9 @@
    },
    "Bermuda Syndrome":{
       "icon":"https://i.imgur.com/GCNi4jC.png"
+   },
+   "Blood":{
+      "icon":"https://i.imgur.com/QiFpccv.png"
    },
    "Bloodborne":{
       "icon":"https://i.imgur.com/pIf2N8Y.png"
@@ -65,6 +72,9 @@
    },
    "Brave Fencer Musashi":{
       "icon":"https://i.imgur.com/XnJOhGG.png"
+   },
+   "BUDD":{
+      "icon":"https://i.imgur.com/VhBTrrF.png"
    },
    "Call of Duty: Black Ops":{
       "icon":"https://i.imgur.com/Tfac47Z.png"
@@ -162,6 +172,9 @@
    },
    "Deltarune":{
       "icon":"https://i.imgur.com/xMbDSCy.png"
+   },
+   "Demon's Crest":{
+      "icon":"https://i.imgur.com/13kXlFU.png"
    },
    "Deus Ex":{
       "icon":"https://i.imgur.com/OKK74n5.png"
@@ -297,6 +310,9 @@
    "Gremlins 2: The New Batch":{
       "icon":"https://i.imgur.com/Aa2kNYq.png"
    },
+   "Gunbound":{
+      "icon":"https://i.imgur.com/tkiJN9F.png"
+   },
    "Ace Attorney Investigations 2: Prosecutor's Gambit":{
       "icon":"https://i.imgur.com/4wLExrH.png",
       "short_name": "AA Investigations 2"
@@ -330,6 +346,9 @@
    },
    "Jets'n'Guns":{
       "icon":"https://i.imgur.com/4kZJ5T2.png"
+   },
+   "Kahoot!":{
+      "icon":"https://i.imgur.com/IQ0q9rz.png"
    },
    "Killer Instinct":{
       "icon":"https://i.imgur.com/SbzbJV3.png"
@@ -404,6 +423,9 @@
    },
    "Luigi's Mansion":{
       "icon":"https://i.imgur.com/YIMnmmn.png"
+   },
+   "Mamorukun Curse!":{
+      "icon":"https://i.imgur.com/wGVS57B.png"
    },
    "Mario & Luigi: Bowser's Inside Story":{
       "icon":"https://i.imgur.com/v5Ktwmx.png",
@@ -605,6 +627,9 @@
    "Perfect Dark":{
       "icon":"https://i.imgur.com/stLKvoP.png"
    },
+   "Persona 2: Innocent Sin":{
+      "icon":"https://i.imgur.com/D7LXH2P.png"
+   },
    "Persona 3":{
       "icon":"https://i.imgur.com/zVT6EfN.png"
    },
@@ -710,6 +735,9 @@
    },
    "Pseudoregalia":{
       "icon":"https://i.imgur.com/sFe6Mom.png"
+   },
+   "Psychopomp":{
+      "icon":"https://i.imgur.com/4t1o9rF.png"
    },
    "Puyo Puyo":{
       "icon":"https://i.imgur.com/x3BCTG5.png"
@@ -830,6 +858,9 @@
    "Star Fox 64":{
       "icon":"https://i.imgur.com/4Obpm9A.png"
    },
+   "Stardew Valley":{
+      "icon":"https://i.imgur.com/UNX1YU9.png"
+   },
    "StarTropics":{
       "icon":"https://i.imgur.com/q42aeg4.png"
    },
@@ -850,6 +881,9 @@
    },
    "Super Ghouls 'n Ghosts":{
       "icon":"https://i.imgur.com/Q3WMIQk.png"
+   },
+   "Super Mario 3D Land":{
+      "icon":"https://i.imgur.com/EZmQBaO.png"
    },
    "Super Mario 3D World":{
       "icon":"https://i.imgur.com/BPgVLG2.png"
@@ -1038,6 +1072,10 @@
    "Touhou Hyouibana ~ Antinomy of Common Flowers":{
       "icon":"https://i.imgur.com/BkSddN5.png",
       "short_name": "Touhou 15.5"
+   },
+   "Touhou Jaseishou ~ The Last Comer":{
+      "icon":"https://i.imgur.com/9lkHQiM.png",
+      "short_name": "The Last Comer"
    },
    "Touhou Kaeidzuka ~ Phantasmagoria of Flower View":{
       "icon":"https://i.imgur.com/UAmNF6P.png",
