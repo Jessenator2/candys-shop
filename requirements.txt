@@ -1,0 +1,14 @@
+mido
+requests
+moviepy==1.0.3
+pillow
+soundfile
+pyloudnorm
+numpy
+pygithub
+httplib2
+dotenv
+google-api-python-client
+google-auth
+google-auth-oauthlib
+google-auth-httplib2

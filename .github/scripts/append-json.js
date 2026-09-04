@@ -56,9 +56,9 @@ async function run() {
       if (f.filename) {
         const extension_sep = f.filename.split(".");
         const extension = extension_sep[extension_sep.length - 1];
-        if (extension == "bin") {
+        if (extension.toLowerCase() == "bin") {
           bin_file = f.filename;
-        } else if (extension == "mid") {
+        } else if (extension.toLowerCase() == "mid") {
           midi_file = f.filename;
           midi_raw_file = f.raw_url;
         } else if (preview_extensions.includes(extension)) {
@@ -159,7 +159,9 @@ async function run() {
             fs.writeFileSync(binNewFilePath, binFileData);
           }
         }
-        fs.unlinkSync(binFilePath);
+        if (fs.existsSync(binFilePath)) {
+          fs.unlinkSync(binFilePath);
+        }
       }
     })
     console.log("File Transfer Done")

@@ -5,6 +5,7 @@
     const path = require('path');
     const parseMidi = require("midi-file").parseMidi;
     const { Midi } = require("@tonejs/midi");
+    const { stringSimilarity } = require("string-similarity-js");
     
     const invalid_chars = [
         ":", "/", "\'", "\"", "?", "#", "%", "&", "{", "}", "\\", "<", ">", "*", "$",
@@ -121,9 +122,9 @@
           if (f.filename) {
               const extension_sep = f.filename.split(".");
               const extension = extension_sep[extension_sep.length - 1];
-              if (extension == "bin") {
+              if (extension.toLowerCase() == "bin") {
                 bin_file = f.filename;
-              } else if (extension == "mid") {
+              } else if (extension.toLowerCase() == "mid") {
                 midi_file = f.filename;
                 midi_raw_file = f.raw_url;
               } else if (preview_extensions.includes(extension)) {
@@ -219,14 +220,15 @@
         }
     
         const game_name = Object.keys(json_output).includes("Game") ? json_output["Game"] : null;
-        const similarity_threshold = 0.75
+        const similarity_threshold = 0.4
         if (game_name != null) {
             if (!Object.keys(imageData).includes(game_name)) {
                 new_game = true;
                 let max_score = 0;
                 let max_score_name = "";
                 Object.keys(imageData).forEach(gn => {
-                    new_score = stringCompare(game_name, gn);
+                    new_score = stringSimilarity(game_name, gn);
+                    console.log(game_name, gn, new_score)
                     if (new_score > max_score) {
                         max_score = new_score
                         max_score_name = gn

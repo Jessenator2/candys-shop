@@ -19,12 +19,14 @@ async function run() {
 
     // Response Flags
     let song_upload = false;
+    let new_game = false;
     let mandatory_headers_included = [];
     let unlisted_headers = [];
     const number_vars = ["Tracks", "Duration"];
     const arr_vars = ["Tags"];
     const data_headers = [
         new UploadHeader("Game", true),
+        new UploadHeader("Needs a Logo", false),
         new UploadHeader("Song", true),
         new UploadHeader("Category", true),
         new UploadHeader("Composers", false),
@@ -40,6 +42,9 @@ async function run() {
         // new UploadHeader("Duration", true),
         // new UploadHeader("Tracks", true),
     ]
+    const file = "images.json"
+    const filePath = path.join(__dirname, `../../${file}`);
+    const imageData = fs.existsSync(filePath) ? require(filePath) : [];
 
 
     // PR Data
@@ -68,9 +73,9 @@ async function run() {
       if (f.filename) {
         const extension_sep = f.filename.split(".");
         const extension = extension_sep[extension_sep.length - 1];
-        if (extension == "bin") {
+        if (extension.toLowerCase() == "bin") {
             bin_file = f.raw_url;
-        } else if (extension == "mid") {
+        } else if (extension.toLowerCase() == "mid") {
             midi_file = f.raw_url;
             midi_raw_file = f.raw_url;
         } else if (preview_extensions.includes(extension)) {
@@ -130,6 +135,14 @@ async function run() {
       }
     }
 
+    if (Object.keys(json_output).includes("Game")) {
+        if (json_output["Game"]) {
+            if (!Object.keys(imageData).includes(json_output["Game"])) {
+                new_game = true;
+            }
+        }
+    }
+
     let user = "Unknown";
     if (response.data.user) {
         user = response.data.user.login;
@@ -148,6 +161,7 @@ async function run() {
             "Binary File": bin_file ? bin_file : "Not Provided",
             "Audio File": preview_file ? preview_file : Object.keys(json_output).includes("Audio") ? json_output["Audio"] : "Not Provided",
             "Midi File": midi_file ? midi_file : "Not Provided",
+            "Needs a logo": new_game ? "Yes" : "No",
             "Duration": Object.keys(json_output).includes("Duration") ? json_output["Duration"] : "Not Provided",
             "Update Notes": Object.keys(json_output).includes("Update Notes") ? json_output["Update Notes"] : "Not Provided",
             "Additional Notes": Object.keys(json_output).includes("Additional Notes") ? json_output["Additional Notes"] : "Not Provided",
@@ -180,12 +194,16 @@ async function run() {
         )
     }
     const webhookUrl = process.env.DISCORD_WEBHOOK_SUBMISSIONS;
+    let ending = ""
+    if (song_upload && new_game) {
+        ending = " (<@83744702129504256> - Logo ping)"
+    }
     const options = {
         method: "POST",
         url: webhookUrl,
         headers: { "Content-Type": "application/json" },
         data: {
-            content: `New Pull Request from ${user}`,
+            content: `New Pull Request from ${user}${ending}`,
             embeds: embeds_arr,
         },
     }
